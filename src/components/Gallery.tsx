@@ -80,8 +80,17 @@ export function Gallery() {
   }, []);
 
   return (
-    <section id="galeria" className="px-6 py-20 sm:py-24 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+    <section id="galeria" className="relative overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+      <div
+        className="pointer-events-none absolute inset-0 z-0 opacity-[0.12]"
+        style={{
+          backgroundImage: 'url(/pet-pattern.svg)',
+          backgroundRepeat: 'repeat',
+          backgroundSize: '320px 320px',
+        }}
+        aria-hidden="true"
+      />
+      <div className="relative z-10 mx-auto max-w-7xl">
         <motion.div
           className="mb-12 mx-auto max-w-2xl text-center"
           variants={headingContainer}
