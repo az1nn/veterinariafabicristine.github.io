@@ -7,13 +7,15 @@ export function Hero() {
 
   return (
     <section id="home" className="relative overflow-hidden px-6 py-14 sm:py-20 lg:py-28">
-      <div className="pointer-events-none absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1600&q=60"
-          alt=""
-          className="h-full w-full object-cover opacity-[0.05]"
-        />
-      </div>
+      <div
+        className="pointer-events-none absolute inset-0 z-0 opacity-[0.18]"
+        style={{
+          backgroundImage: 'url(/pet-pattern.svg)',
+          backgroundRepeat: 'repeat',
+          backgroundSize: '320px 320px',
+        }}
+        aria-hidden="true"
+      />
       <div className="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div className="space-y-8">
           <motion.div
