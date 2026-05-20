@@ -1,11 +1,11 @@
 export const CONTACT_INFO = {
-  whatsappNumber: '(21) 99999-9999',
-  whatsappUrl: 'https://wa.me/5521999999999',
+  whatsappNumber: '(21) 97002-3845',
+  whatsappUrl: 'https://wa.me/5521970023845',
   whatsappBookingMessage:
     'Olá Dra. Fabi Cristine, gostaria de agendar uma consulta para meu pet.',
   whatsappInfoMessage:
     'Olá Dra. Fabi Cristine, gostaria de saber mais sobre seu atendimento domiciliar.',
-  email: 'contato@dra-fabi-cristine.com',
+  email: 'veterinariafabiola@gmail.com',
   location: 'Rio de Janeiro, RJ'
 };
 
