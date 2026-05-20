@@ -1,10 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Toe pads -->
   <ellipse cx="44" cy="68" rx="13" ry="18" stroke="#3AADA0" stroke-width="8.5" transform="rotate(-25 44 68)"/>
   <ellipse cx="79" cy="50" rx="13" ry="18" stroke="#3AADA0" stroke-width="8.5" transform="rotate(-7 79 50)"/>
   <ellipse cx="118" cy="50" rx="13" ry="18" stroke="#3AADA0" stroke-width="8.5" transform="rotate(7 118 50)"/>
   <ellipse cx="153" cy="68" rx="13" ry="18" stroke="#3AADA0" stroke-width="8.5" transform="rotate(25 153 68)"/>
+  <!-- Stethoscope connector dots -->
   <circle cx="78" cy="100" r="8" fill="#3AADA0"/>
   <circle cx="122" cy="100" r="8" fill="#3AADA0"/>
+  <!-- Stethoscope tube forming main pad outline -->
   <path d="M78 100 C54 100 38 118 38 140 C38 164 64 180 100 180 C136 180 162 164 162 140 C162 118 146 100 122 100" stroke="#3AADA0" stroke-width="8.5" stroke-linecap="round" fill="none"/>
+  <!-- Chest piece -->
   <circle cx="100" cy="142" r="20" stroke="#3AADA0" stroke-width="8.5"/>
 </svg>
