@@ -14,6 +14,26 @@ import {
 } from 'lucide-react';
 import { getWhatsAppLink } from '../constants/contact';
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
+};
+
+const headingContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12 } },
+};
+
+const gridContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.07 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 36 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
 const serviceImages = [
   'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=400&q=80',
   'https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?auto=format&fit=crop&w=400&q=80',
@@ -44,19 +64,32 @@ export function Services() {
   return (
     <section id="servicos" className="px-6 py-20 sm:py-24 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12 mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-aqua">Serviços</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+        <motion.div
+          className="mb-12 mx-auto max-w-2xl text-center"
+          variants={headingContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-60px' }}
+        >
+          <motion.p variants={fadeUp} className="text-sm font-semibold uppercase tracking-[0.24em] text-aqua">Serviços</motion.p>
+          <motion.h2 variants={fadeUp} className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
             Soluções completas para saúde, conforto e bem-estar dos seus pets.
-          </h2>
-          <p className="mt-4 text-lg leading-8 text-slate-600">
+          </motion.h2>
+          <motion.p variants={fadeUp} className="mt-4 text-lg leading-8 text-slate-600">
             Um portfólio de serviços pensado para disponibilizar o melhor atendimento veterinário domiciliar com tecnologia e atenção humanizada.
-          </p>
-        </div>
-        <div className="grid gap-5 grid-cols-2 xl:grid-cols-3">
+          </motion.p>
+        </motion.div>
+        <motion.div
+          className="grid gap-5 grid-cols-2 xl:grid-cols-3"
+          variants={gridContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-80px' }}
+        >
           {services.map((item, index) => (
             <motion.article
               key={item.title}
+              variants={cardVariants}
               whileHover={{ y: -6 }}
               className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-soft"
             >
@@ -86,7 +119,7 @@ export function Services() {
               </div>
             </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

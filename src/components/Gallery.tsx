@@ -3,6 +3,36 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ImagePlus, Home, Heart, MessageCircle, PawPrint, X } from 'lucide-react';
 import { getWhatsAppLink } from '../constants/contact';
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
+};
+
+const headingContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12 } },
+};
+
+const gridContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.09 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 36 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
+const modalContent = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1 } },
+};
+
+const modalItem = {
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } },
+};
+
 const gallery = [
   {
     title: 'Pets felizes',
@@ -52,18 +82,31 @@ export function Gallery() {
   return (
     <section id="galeria" className="px-6 py-20 sm:py-24 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12 mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-aqua">Galeria</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+        <motion.div
+          className="mb-12 mx-auto max-w-2xl text-center"
+          variants={headingContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-60px' }}
+        >
+          <motion.p variants={fadeUp} className="text-sm font-semibold uppercase tracking-[0.24em] text-aqua">Galeria</motion.p>
+          <motion.h2 variants={fadeUp} className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
             Momentos de cuidado, carinho e tranquilidade nos lares cariocas.
-          </h2>
-        </div>
-        <div className="grid gap-6 grid-cols-2 xl:grid-cols-4">
+          </motion.h2>
+        </motion.div>
+        <motion.div
+          className="grid gap-6 grid-cols-2 xl:grid-cols-4"
+          variants={gridContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-80px' }}
+        >
           {gallery.map((item, index) => (
             <motion.button
               key={item.title}
               type="button"
               onClick={() => setActiveIndex(index)}
+              variants={cardVariants}
               whileHover={{ y: -6 }}
               className="group overflow-hidden rounded-[2rem] bg-white text-left shadow-soft"
             >
@@ -85,7 +128,7 @@ export function Gallery() {
               </div>
             </motion.button>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <AnimatePresence>
@@ -125,18 +168,23 @@ export function Gallery() {
                   <X className="h-5 w-5" />
                 </button>
               </div>
-              <div className="mt-8 space-y-6">
-                <div className="overflow-hidden rounded-[1.75rem]">
+              <motion.div
+                className="mt-8 space-y-6"
+                variants={modalContent}
+                initial="hidden"
+                animate="show"
+              >
+                <motion.div variants={modalItem} className="overflow-hidden rounded-[1.75rem]">
                   <img
                     src={activeItem.image}
                     alt={activeItem.title}
                     className="h-64 w-full object-cover"
                   />
-                </div>
-                <div className="rounded-[1.75rem] bg-slate-100 p-8">
+                </motion.div>
+                <motion.div variants={modalItem} className="rounded-[1.75rem] bg-slate-100 p-8">
                   <p className="text-lg leading-8 text-slate-700">{activeItem.detail}</p>
-                </div>
-                <div className="flex flex-col gap-3 sm:flex-row">
+                </motion.div>
+                <motion.div variants={modalItem} className="flex flex-col gap-3 sm:flex-row">
                   <a
                     href={getWhatsAppLink(`Olá Dra. Fabi Cristine, vi na galeria sobre "${activeItem.title}" e gostaria de agendar um atendimento domiciliar.`)}
                     target="_blank"
@@ -150,8 +198,8 @@ export function Gallery() {
                   <span className="inline-flex items-center justify-center rounded-3xl bg-slate-50 px-4 py-3 text-sm text-slate-500">
                     Clique fora para fechar ou use o botão acima.
                   </span>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </motion.div>
           </motion.div>
         )}
