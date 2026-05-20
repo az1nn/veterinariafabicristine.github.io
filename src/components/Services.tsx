@@ -5,12 +5,14 @@ import {
   ClipboardCheck,
   Heart,
   Leaf,
+  MessageCircle,
   PawPrint,
   Pill,
   ShieldCheck,
   Smile,
   Syringe
 } from 'lucide-react';
+import { getWhatsAppLink } from '../constants/contact';
 
 const serviceImages = [
   'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=400&q=80',
@@ -51,7 +53,7 @@ export function Services() {
             Um portfólio de serviços pensado para disponibilizar o melhor atendimento veterinário domiciliar com tecnologia e atenção humanizada.
           </p>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-5 grid-cols-2 xl:grid-cols-3">
           {services.map((item, index) => (
             <motion.article
               key={item.title}
@@ -71,6 +73,16 @@ export function Services() {
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-slate-950">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
+                <a
+                  href={getWhatsAppLink(`Olá Dra. Fabi Cristine, gostaria de saber mais sobre o serviço de ${item.title}.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-green-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-green-600 active:scale-95"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Agendar via WhatsApp
+                </a>
               </div>
             </motion.article>
           ))}

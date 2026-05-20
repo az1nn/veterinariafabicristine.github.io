@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ImagePlus, Home, Heart, PawPrint, X } from 'lucide-react';
+import { ImagePlus, Home, Heart, MessageCircle, PawPrint, X } from 'lucide-react';
+import { getWhatsAppLink } from '../constants/contact';
 
 const gallery = [
   {
@@ -57,7 +58,7 @@ export function Gallery() {
             Momentos de cuidado, carinho e tranquilidade nos lares cariocas.
           </h2>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-6 grid-cols-2 xl:grid-cols-4">
           {gallery.map((item, index) => (
             <motion.button
               key={item.title}
@@ -135,9 +136,20 @@ export function Gallery() {
                 <div className="rounded-[1.75rem] bg-slate-100 p-8">
                   <p className="text-lg leading-8 text-slate-700">{activeItem.detail}</p>
                 </div>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <span className="rounded-3xl bg-aqua/10 px-4 py-3 text-sm font-semibold text-slate-900">Conteúdo visual</span>
-                  <span className="rounded-3xl bg-slate-50 px-4 py-3 text-sm text-slate-600">Clique fora para fechar ou use o botão acima.</span>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <a
+                    href={getWhatsAppLink(`Olá Dra. Fabi Cristine, vi na galeria sobre "${activeItem.title}" e gostaria de agendar um atendimento domiciliar.`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-3xl bg-green-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-green-600 active:scale-95"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    Agendar via WhatsApp
+                  </a>
+                  <span className="inline-flex items-center justify-center rounded-3xl bg-slate-50 px-4 py-3 text-sm text-slate-500">
+                    Clique fora para fechar ou use o botão acima.
+                  </span>
                 </div>
               </div>
             </motion.div>
