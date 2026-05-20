@@ -17,7 +17,7 @@ export function Hero() {
         aria-hidden="true"
       />
       <div className="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div className="space-y-8">
+        <div className="space-y-8 text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export function Hero() {
             <p className="max-w-2xl text-lg leading-8 text-slate-600">
               Atendimento domiciliar completo para cães e gatos no Rio de Janeiro com carinho, tecnologia e acompanhamento personalizado.
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row">
+            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <a
                 href="#contato"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-soft hover:bg-slate-800"
