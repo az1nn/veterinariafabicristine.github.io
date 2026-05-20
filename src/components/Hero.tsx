@@ -89,7 +89,7 @@ export function Hero() {
         >
           <div className="relative overflow-hidden rounded-[2rem] bg-white">
             <img
-              src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80"
+              src="https://github.com/user-attachments/assets/e92239d2-e1e6-4116-888a-25e7452ac1f3"
               alt="Dra. Fabi Cristine atendendo pet em casa"
               className="h-full w-full object-cover"
             />
