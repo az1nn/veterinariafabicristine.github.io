@@ -1,6 +1,13 @@
-import { Instagram, MapPin, Phone, Twitter, Youtube } from 'lucide-react';
+import { Instagram, Phone, Twitter, Youtube } from 'lucide-react';
+import { CONTACT_INFO, SOCIAL_LINKS } from '../constants/contact';
 
 export function Footer() {
+  const socialIcons = {
+    Instagram,
+    Twitter,
+    YouTube: Youtube
+  };
+
   return (
     <footer className="border-t border-slate-200 bg-white px-6 py-10 sm:px-8">
       <div className="mx-auto flex max-w-7xl flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
@@ -13,20 +20,37 @@ export function Footer() {
         <div className="grid gap-4 text-sm text-slate-600 sm:grid-cols-3">
           <div className="space-y-2">
             <p className="font-semibold text-slate-900">WhatsApp</p>
-            <a href="https://wa.me/5521999999999" className="flex items-center gap-2 hover:text-slate-900">
-              <Phone className="h-4 w-4" /> (21) 99999-9999
+            <a
+              href={CONTACT_INFO.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-slate-900"
+            >
+              <Phone className="h-4 w-4" /> {CONTACT_INFO.whatsappNumber}
             </a>
           </div>
           <div className="space-y-2">
             <p className="font-semibold text-slate-900">Localização</p>
-            <p>Rio de Janeiro, RJ</p>
+            <p>{CONTACT_INFO.location}</p>
           </div>
           <div className="space-y-3">
             <p className="font-semibold text-slate-900">Redes sociais</p>
             <div className="flex items-center gap-3 text-slate-600">
-              <a href="#" aria-label="Instagram" className="hover:text-slate-900"><Instagram className="h-5 w-5" /></a>
-              <a href="#" aria-label="Twitter" className="hover:text-slate-900"><Twitter className="h-5 w-5" /></a>
-              <a href="#" aria-label="YouTube" className="hover:text-slate-900"><Youtube className="h-5 w-5" /></a>
+              {SOCIAL_LINKS.map((social) => {
+                const Icon = socialIcons[social.name as keyof typeof socialIcons];
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    className="hover:text-slate-900"
+                  >
+                    <Icon className="h-5 w-5" />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

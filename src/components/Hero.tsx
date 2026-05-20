@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, CalendarCheck, HeartPulse, PawPrint } from 'lucide-react';
+import { CONTACT_INFO, getWhatsAppLink } from '../constants/contact';
 
 export function Hero() {
+  const whatsappLink = getWhatsAppLink(CONTACT_INFO.whatsappBookingMessage);
+
   return (
     <section id="home" className="overflow-hidden px-6 py-14 sm:py-20 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -38,7 +41,9 @@ export function Hero() {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="https://wa.me/5521999999999?text=Olá%20Dra.%20Fabi%20Cristine%2C%20gostaria%20de%20agendar%20uma%20consulta"
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:border-slate-300 hover:bg-slate-50"
               >
                 Falar no WhatsApp

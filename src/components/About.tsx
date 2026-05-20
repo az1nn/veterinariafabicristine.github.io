@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { CalendarDays, ClipboardList, HeartPulse, Star, UserCheck } from 'lucide-react';
+import { CalendarDays, ClipboardList, HeartPulse, UserCheck } from 'lucide-react';
 
 const features = [
   { title: 'Consultas completas', description: 'Avaliação física, histórico e plano personalizado.', icon: ClipboardList },
@@ -19,7 +19,9 @@ export function About() {
               Medicina veterinária com empatia, tecnologia e foco total no bem-estar de cães e gatos.
             </h2>
             <p className="max-w-xl text-lg leading-8 text-slate-600">
-              Sou médica veterinária apaixonada por saúde animal e atendimento domiciliar elegante. Meu trabalho une prevenção, prevenção e acompanhamento emocional para tutores que desejam segurança, agilidade e menos ansiedade para seus pets.
+              Sou médica veterinária apaixonada por saúde animal e atendimento domiciliar acolhedor. Meu trabalho une
+              prevenção, acompanhamento clínico e apoio emocional para tutores que desejam segurança, agilidade e menos
+              ansiedade para seus pets.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               {features.map((item) => (
@@ -40,7 +42,13 @@ export function About() {
           <div className="relative mx-auto max-w-xl rounded-[2rem] bg-gradient-to-br from-slate-950/5 to-white p-1 shadow-soft">
             <div className="rounded-[1.75rem] bg-white p-6 sm:p-8">
               <div className="space-y-4">
-                <div className="h-80 overflow-hidden rounded-[1.5rem] bg-slate-100" />
+                <div className="h-80 overflow-hidden rounded-[1.5rem] bg-slate-100">
+                  <img
+                    src="/hero-illustration.svg"
+                    alt="Atendimento veterinário domiciliar com acolhimento e cuidado"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
                 <div className="space-y-3">
                   <p className="text-sm uppercase tracking-[0.24em] text-slate-500">Atendimento humanizado</p>
                   <p className="text-lg font-semibold leading-7 text-slate-950">

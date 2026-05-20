@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ImagePlus, Home, Heart, PawPrint, X } from 'lucide-react';
 
@@ -33,8 +33,19 @@ export function Gallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const activeItem = activeIndex !== null ? gallery[activeIndex] : null;
 
+  useEffect(() => {
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setActiveIndex(null);
+      }
+    }
+
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, []);
+
   return (
-    <section className="px-6 py-20 sm:py-24 lg:px-8">
+    <section id="galeria" className="px-6 py-20 sm:py-24 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-aqua">Galeria</p>
@@ -71,6 +82,7 @@ export function Gallery() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 p-6"
             onClick={() => setActiveIndex(null)}
+            role="presentation"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
@@ -79,11 +91,16 @@ export function Gallery() {
               transition={{ duration: 0.25 }}
               className="max-w-3xl rounded-[2rem] bg-white p-8 shadow-soft"
               onClick={(event) => event.stopPropagation()}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="gallery-modal-title"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-sm uppercase tracking-[0.24em] text-aqua">Galeria</p>
-                  <h3 className="mt-4 text-3xl font-semibold text-slate-950">{activeItem.title}</h3>
+                  <h3 id="gallery-modal-title" className="mt-4 text-3xl font-semibold text-slate-950">
+                    {activeItem.title}
+                  </h3>
                 </div>
                 <button
                   type="button"
