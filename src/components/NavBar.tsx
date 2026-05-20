@@ -30,7 +30,7 @@ export function NavBar() {
         <a href="#home" className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-900">
           <div className="flex h-11 w-11 items-center justify-center rounded-3xl bg-aqua/15 shadow-soft overflow-hidden">
             <img
-              src="https://github.com/user-attachments/assets/86cb0704-f28a-4b9b-b9f8-a1bd2419b742"
+              src="https://github.com/user-attachments/assets/3da303e4-d6d9-4285-ad94-ae53312d6665"
               alt="Logo Veterinária Fabi Cristine"
               className="h-8 w-8 object-contain"
             />

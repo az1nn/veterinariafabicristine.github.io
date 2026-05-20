@@ -6,14 +6,14 @@ const gallery = [
   {
     title: 'Pets felizes',
     icon: PawPrint,
-    image: 'https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=600&q=80',
+    image: 'https://github.com/user-attachments/assets/ff8d2f9d-6d2d-4bdc-9b21-7d0fffeaea9c',
     description: 'Ambiente acolhedor e familiar para o seu animal.',
     detail: 'Retratos de saúde e alegria trazidos pelo atendimento personalizado em casa.'
   },
   {
     title: 'Atendimento domiciliar',
     icon: Home,
-    image: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=600&q=80',
+    image: 'https://github.com/user-attachments/assets/1030c7e5-29a7-4669-884d-1d040d8dfde4',
     description: 'Consultas no conforto do lar com todo carinho.',
     detail: 'Visitas cuidadosas que reduzem a ansiedade do pet e deixam o tutor mais tranquilo.'
   },
