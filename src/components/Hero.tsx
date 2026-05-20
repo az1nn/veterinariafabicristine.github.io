@@ -6,8 +6,15 @@ export function Hero() {
   const whatsappLink = getWhatsAppLink(CONTACT_INFO.whatsappBookingMessage);
 
   return (
-    <section id="home" className="overflow-hidden px-6 py-14 sm:py-20 lg:py-28">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+    <section id="home" className="relative overflow-hidden px-6 py-14 sm:py-20 lg:py-28">
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1600&q=60"
+          alt=""
+          className="h-full w-full object-cover opacity-[0.05]"
+        />
+      </div>
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div className="space-y-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -80,7 +87,7 @@ export function Hero() {
         >
           <div className="relative overflow-hidden rounded-[2rem] bg-white">
             <img
-              src="/hero-illustration.svg"
+              src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80"
               alt="Dra. Fabi Cristine atendendo pet em casa"
               className="h-full w-full object-cover"
             />

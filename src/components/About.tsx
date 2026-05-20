@@ -44,7 +44,7 @@ export function About() {
               <div className="space-y-4">
                 <div className="h-80 overflow-hidden rounded-[1.5rem] bg-slate-100">
                   <img
-                    src="/hero-illustration.svg"
+                    src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
                     alt="Atendimento veterinário domiciliar com acolhimento e cuidado"
                     className="h-full w-full object-cover"
                   />
