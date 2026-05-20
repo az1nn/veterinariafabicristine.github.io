@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { HeartHandshake, Menu, MessageSquare, X } from 'lucide-react';
+import { Menu, MessageSquare, X } from 'lucide-react';
 import { CONTACT_INFO, getWhatsAppLink } from '../constants/contact';
 
 const navLinks = [
@@ -28,8 +28,12 @@ export function NavBar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <a href="#home" className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-900">
-          <div className="flex h-11 w-11 items-center justify-center rounded-3xl bg-aqua/15 text-aqua shadow-soft">
-            <HeartHandshake className="h-5 w-5" />
+          <div className="flex h-11 w-11 items-center justify-center rounded-3xl bg-aqua/15 shadow-soft overflow-hidden">
+            <img
+              src="https://github.com/user-attachments/assets/86cb0704-f28a-4b9b-b9f8-a1bd2419b742"
+              alt="Logo Veterinária Fabi Cristine"
+              className="h-8 w-8 object-contain"
+            />
           </div>
           Dra. Fabi Cristine
         </a>
