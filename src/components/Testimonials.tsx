@@ -23,7 +23,7 @@ export function Testimonials() {
   return (
     <section id="depoimentos" className="px-6 py-20 sm:py-24 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12 max-w-2xl">
+        <div className="mb-12 mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-aqua">Depoimentos</p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
             Tutores satisfeitos com um atendimento delicado e profissional.
