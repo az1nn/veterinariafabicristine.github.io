@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
-import { Home, Inbox, Layers, Palette, Smile, Sparkles, MessageCircle } from 'lucide-react';
+import { Home, Inbox, Layers, Smile, Sparkles, MessageCircle } from 'lucide-react';
 
 const items = [
   { title: 'Atendimento em domicílio', icon: Home },
   { title: 'Prontuário digital', icon: Inbox },
   { title: 'Receitas digitais', icon: Layers },
-  { title: 'Acompanhamento personalizado', icon: Palette },
   { title: 'Atendimento humanizado', icon: Smile },
   { title: 'Redução do estresse', icon: Sparkles },
   { title: 'Comunicação direta', icon: MessageCircle }

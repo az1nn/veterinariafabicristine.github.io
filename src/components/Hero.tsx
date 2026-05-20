@@ -64,12 +64,11 @@ export function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2 }}
-            className="grid gap-4 rounded-[2rem] border border-slate-200 bg-white/90 p-6 shadow-soft sm:grid-cols-3"
+            className="grid gap-4 rounded-[2rem] border border-slate-200 bg-white/90 p-6 shadow-soft sm:grid-cols-2"
           >
             {[
               { title: 'Atendimento domiciliar', icon: CalendarCheck },
               { title: 'Prontuário digital', icon: HeartPulse },
-              { title: 'Acompanhamento personalizado', icon: ArrowRight }
             ].map((item) => (
               <div key={item.title} className="flex items-center gap-4 rounded-3xl bg-slate-50 p-4">
                 <span className="flex h-12 w-12 items-center justify-center rounded-3xl bg-aqua/15 text-aqua">
