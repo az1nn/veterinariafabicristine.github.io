@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { MapPin, Phone, Send } from 'lucide-react';
+import { CONTACT_INFO } from '../constants/contact';
 
 export function Contact() {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -9,9 +10,11 @@ export function Contact() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitted(true);
-    const mailto = `mailto:contato@dra-fabi-cristine.com?subject=Contato%20para%20consulta&body=Nome:%20${encodeURIComponent(
-      formState.name
-    )}%0AEmail:%20${encodeURIComponent(formState.email)}%0AMensagem:%20${encodeURIComponent(formState.message)}`;
+    const subject = encodeURIComponent('Contato para consulta');
+    const body = encodeURIComponent(
+      `Nome: ${formState.name}\nEmail: ${formState.email}\nMensagem: ${formState.message}`
+    );
+    const mailto = `mailto:${CONTACT_INFO.email}?subject=${subject}&body=${body}`;
     window.location.href = mailto;
   }
 
@@ -33,7 +36,7 @@ export function Contact() {
               </span>
               <div>
                 <p className="font-semibold text-slate-950">WhatsApp</p>
-                <p className="text-sm text-slate-600">(21) 99999-9999</p>
+                <p className="text-sm text-slate-600">{CONTACT_INFO.whatsappNumber}</p>
               </div>
             </div>
             <div className="flex items-start gap-4 rounded-3xl bg-slate-50 p-5">
@@ -42,7 +45,7 @@ export function Contact() {
               </span>
               <div>
                 <p className="font-semibold text-slate-950">Localização</p>
-                <p className="text-sm text-slate-600">Rio de Janeiro, RJ</p>
+                <p className="text-sm text-slate-600">{CONTACT_INFO.location}</p>
               </div>
             </div>
           </div>
